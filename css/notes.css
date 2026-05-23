@@ -1,0 +1,347 @@
+/* Notes Layout */
+.notes-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    min-height: calc(100vh - 140px);
+}
+
+/* TOC Sidebar */
+.toc-panel {
+    width: 240px;
+    flex-shrink: 0;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem;
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+}
+
+.toc-panel h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.toc-links a {
+    display: block;
+    padding: 0.35rem 0;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.82rem;
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    padding-left: 0.6rem;
+    transition: all 0.15s ease;
+    margin-bottom: 0.1rem;
+}
+
+.toc-links a:hover,
+.toc-links a.active {
+    color: var(--cyan);
+    border-left-color: var(--cyan);
+}
+
+/* Notes Area */
+.notes-area {
+    flex: 1;
+    min-width: 0;
+}
+
+.notes-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    position: relative;
+    min-height: 500px;
+}
+
+.notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.notes-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.lang-badge {
+    background: #e0f2fe;
+    color: #0891b2;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.lang-btn {
+    background: none;
+    border: 1.5px solid var(--border);
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font);
+    font-size: 0.85rem;
+    color: var(--text);
+    transition: all 0.2s;
+}
+
+.lang-btn:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+/* Markdown Body */
+.notes-body {
+    line-height: 1.8;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.notes-body h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.notes-body h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.6rem;
+}
+
+.notes-body h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1.2rem 0 0.5rem;
+}
+
+.notes-body p {
+    margin-bottom: 0.8rem;
+}
+
+.notes-body ul,
+.notes-body ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes-body li {
+    margin-bottom: 0.3rem;
+}
+
+.notes-body strong {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.notes-body code {
+    background: #f1f5f9;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.85em;
+    color: #e11d48;
+}
+
+.notes-body pre {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.notes-body pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.notes-body blockquote {
+    border-left: 3px solid #06b6d4;
+    padding: 0.5rem 1rem;
+    background: #f0fdfa;
+    border-radius: 0 8px 8px 0;
+    margin: 0.8rem 0;
+    color: #334155;
+}
+
+.notes-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.8rem 0;
+    font-size: 0.9rem;
+}
+
+.notes-body th,
+.notes-body td {
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+.notes-body th {
+    background: #f8fafc;
+    font-weight: 600;
+}
+
+.notes-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0.8rem 0;
+}
+
+/* Copy Button */
+.copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #e2e8f0;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-family: var(--font);
+    transition: background 0.2s;
+}
+
+.copy-btn:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+/* Lock Overlay */
+.lock-overlay {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 4rem 1rem 1.5rem;
+    background: linear-gradient(to top, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.8) 60%, transparent 100%);
+    text-align: center;
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.lock-overlay.visible {
+    display: block;
+}
+
+.lock-card {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.1);
+    display: inline-block;
+    border: 1px solid var(--border);
+}
+
+.lock-card p {
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+.unlock-btn {
+    background: #06b6d4;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font);
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.unlock-btn:hover {
+    background: #0891b2;
+}
+
+/* Image Modal */
+#image-modal img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    z-index: 300;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+/* Loading */
+.notes-body > p:only-child {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .notes-wrapper {
+        flex-direction: column;
+        padding: 0.8rem;
+        gap: 1rem;
+    }
+    
+    .toc-panel {
+        width: 100%;
+        position: static;
+        max-height: none;
+        border-radius: var(--radius);
+    }
+    
+    .notes-card {
+        padding: 1.2rem 1rem;
+    }
+    
+    .notes-header h1 {
+        font-size: 1.2rem;
+    }
+}
