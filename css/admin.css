@@ -1,0 +1,147 @@
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.admin-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
+
+.admin-card h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-full {
+    grid-column: 1 / -1;
+}
+
+.form-group {
+    margin-bottom: 0.8rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-family: var(--font);
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #f8fafc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--cyan);
+    background: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.output-box {
+    margin-top: 1rem;
+    padding: 0.6rem;
+    background: #f1f5f9;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    word-break: break-all;
+    min-height: 2rem;
+    border: 1px dashed #cbd5e1;
+    font-family: 'SF Mono', monospace;
+}
+
+.lead-controls {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.lead-controls input {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.6rem 0.8rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-family: var(--font);
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.lead-controls input:focus {
+    border-color: var(--cyan);
+}
+
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+#leads-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+#leads-table th {
+    background: #f8fafc;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+}
+
+#leads-table td {
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+#leads-table tr:hover td {
+    background: #f8fafc;
+}
+
+.lead-count {
+    margin-top: 0.8rem;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--cyan);
+}
+
+@media (max-width: 768px) {
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-full {
+        grid-column: 1;
+    }
+}
