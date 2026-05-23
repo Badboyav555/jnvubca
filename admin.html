@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - BCA Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">BCA<span>admin</span></a>
+            <div class="nav-right">
+                <a href="index.html">Home</a>
+                <a href="semester.html">Semesters</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="page-title">🛡️ Admin Dashboard</h1>
+        
+        <div class="admin-grid">
+            <!-- Note Generator -->
+            <div class="admin-card">
+                <h2>📝 Generate Note File</h2>
+                <form id="note-generator">
+                    <div class="form-group">
+                        <label>Subject Folder</label>
+                        <input type="text" id="gen-subject" placeholder="e.g., c-programming" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Unit Name</label>
+                        <input type="text" id="gen-unit" placeholder="e.g., unit1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Language</label>
+                        <select id="gen-lang">
+                            <option value="en">English</option>
+                            <option value="hi">Hindi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Markdown Content</label>
+                        <textarea id="gen-markdown" rows="10" placeholder="Write your markdown here..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Download .md File</button>
+                </form>
+                <div class="output-box" id="generate-output"></div>
+            </div>
+
+            <!-- Link Generator -->
+            <div class="admin-card">
+                <h2>🔗 Generate Unit Link</h2>
+                <div class="form-group">
+                    <label>Subject ID</label>
+                    <input type="text" id="link-subject" placeholder="e.g., c-programming">
+                </div>
+                <div class="form-group">
+                    <label>Unit ID</label>
+                    <input type="text" id="link-unit" placeholder="e.g., unit1">
+                </div>
+                <button id="copy-link-btn" class="submit-btn">Copy Link</button>
+                <div class="output-box" id="link-output"></div>
+            </div>
+
+            <!-- Leads Table -->
+            <div class="admin-card admin-full">
+                <h2>👥 Lead Management</h2>
+                <div class="lead-controls">
+                    <input type="text" id="lead-search" placeholder="🔍 Search leads...">
+                    <button id="export-csv" class="submit-btn" style="width:auto;">📥 Export CSV</button>
+                    <button id="refresh-leads" class="submit-btn" style="width:auto;">🔄 Refresh</button>
+                </div>
+                <div class="table-wrap">
+                    <table id="leads-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Mobile</th>
+                                <th>Note</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leads-tbody">
+                            <tr><td colspan="4">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="lead-count" id="lead-count">Total Leads: 0</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
