@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCA Notes - Premium Learning Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">BCA<span>notes</span></a>
+            <div class="nav-right">
+                <a href="semester.html">Semesters</a>
+                <a href="admin.html" class="admin-link">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <span class="hero-badge">📚 BCA 2024-25</span>
+            <h1>Your Premium Notes Platform</h1>
+            <p>Well-organized, searchable study material for BCA students</p>
+            
+            <!-- Search -->
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="global-search" placeholder="Search subjects, units, topics...">
+                <div class="search-dropdown" id="search-results"></div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat">
+                    <strong>6</strong>
+                    <span>Semesters</span>
+                </div>
+                <div class="stat">
+                    <strong>30+</strong>
+                    <span>Subjects</span>
+                </div>
+                <div class="stat">
+                    <strong>100+</strong>
+                    <span>Notes</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Semester Grid -->
+        <section class="section">
+            <h2 class="section-title">📖 Select Semester</h2>
+            <div class="semester-grid" id="semester-grid"></div>
+        </section>
+
+        <!-- Trending -->
+        <section class="section">
+            <h2 class="section-title">🔥 Trending Subjects</h2>
+            <div class="trending-grid" id="trending-grid"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 BCA Notes. Made with ❤️ for students.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
