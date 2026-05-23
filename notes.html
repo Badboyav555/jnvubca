@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Notes - BCA Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notes.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">BCA<span>notes</span></a>
+            <div class="nav-right">
+                <button id="lang-toggle" class="lang-btn">हिन्दी</button>
+                <a href="admin.html">Admin</a>
+            </div>
+        </div>
+        <div class="progress-line" id="progress-bar"></div>
+    </nav>
+
+    <!-- Notes Layout -->
+    <div class="notes-wrapper">
+        <!-- Table of Contents -->
+        <aside class="toc-panel" id="toc-sidebar">
+            <h3>📑 Table of Contents</h3>
+            <div class="toc-links" id="toc-list"></div>
+        </aside>
+        
+        <!-- Notes Content -->
+        <main class="notes-area">
+            <article class="notes-card" id="notes-content">
+                <div class="notes-header">
+                    <h1 id="note-title">Loading...</h1>
+                    <span class="lang-badge" id="lang-badge">English</span>
+                </div>
+                <div class="notes-body" id="markdown-body">
+                    <p>⏳ Loading notes...</p>
+                </div>
+                <!-- Lock Overlay -->
+                <div class="lock-overlay" id="preview-lock">
+                    <div class="lock-card">
+                        <p>🔒 You've viewed 30% of the content</p>
+                        <button class="unlock-btn" id="unlock-trigger">Unlock Full Notes</button>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <!-- Unlock Modal -->
+    <div class="modal-overlay" id="unlock-modal">
+        <div class="modal-box">
+            <span class="modal-close">×</span>
+            <h3>🔓 Unlock Full Notes</h3>
+            <p>Enter your details to continue reading</p>
+            <form id="lead-form">
+                <input type="text" id="lead-name" placeholder="Your Full Name" required>
+                <input type="tel" id="lead-mobile" placeholder="Mobile Number (10 digits)" required pattern="[0-9]{10}">
+                <input type="hidden" id="lead-note-title">
+                <button type="submit" class="submit-btn">Unlock Now</button>
+            </form>
+            <p class="form-note">No OTP • No Password • Instant Access</p>
+        </div>
+    </div>
+
+    <!-- Image Zoom Modal -->
+    <div class="modal-overlay" id="image-modal">
+        <span class="modal-close">×</span>
+        <img id="image-modal-img" src="" alt="Zoomed image">
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/notes.js"></script>
+</body>
+</html>
